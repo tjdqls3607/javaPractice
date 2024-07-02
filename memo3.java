@@ -20,16 +20,40 @@ public class memo3 {
 			int selectNo = Integer.parseInt(scanner.nextLine());
 			
 			if(selectNo ==1) {
-				//작성위치
+				System.out.println("1.학생수> ");
+				studentNum = Integer.parseInt(scanner.nextLine());
+				scores = new int[studentNum];
 			}else if(selectNo ==2) {
 				//작성위치
+				for(int i=0; i<studentNum; i++) {
+					System.out.print("scores[" + i + "]: ");
+					int score = Integer.parseInt(scanner.nextLine());
+					scores[i] = score;
+				}
+				
 			}else if(selectNo ==3) {
 				//작성위치
+				for(int i=0; i<studentNum; i++) {
+					System.out.println("scores[" + i + "]: " + scores[i]);
+				}
 			}else if(selectNo ==4) {
 				//작성위치
+				int max = 0;
+				int sum = 0;
+				double avg = 0.0;
+				for(int i=0; i<studentNum; i++) {
+					sum += scores[i];
+					if(scores[i]>max) {
+						max = scores[i];
+					}
+				}
+				avg = (double) sum/studentNum;
+				System.out.println("최고점수 : " + max);
+				System.out.println("평균점수 : " + avg);
 			}else if(selectNo ==5) {
 				run = false;
 				//작성위치
+				
 			}
 		}
 		
